@@ -2,8 +2,16 @@
 
 import os
 import errno
-import glob2
 
+try:
+    import glob2
+except ImportError:
+    import pip
+    if hasattr(pip, 'main'):
+        pip.main(['install', 'glob2'])
+    else:
+        pip._internal.main(['install', 'glob2'])
+    import glob2
 
 class CheatsManager(object):
     """ Class that manages the cheat sheets """

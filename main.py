@@ -60,7 +60,7 @@ class CheatsExtension(Extension):
                 open_file_action = OpenAction(cheat['path'])
                 open_in_hawkeye_action = RunScriptAction('%s --uri="%s"' % (hawkeye_bin, uri), [])
 
-                if use_hawkeye_default:
+                if use_hawkeye_default == 'true':
                     primary_action = open_in_hawkeye_action
                     secondary_action = open_file_action
                 else:
